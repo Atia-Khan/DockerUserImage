@@ -1,6 +1,8 @@
 package com.atiakhan.javapractice;
 
-// import java.sql.Date;
+
+
+import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,19 +19,18 @@ import lombok.Setter;
 public class Users {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     // @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
     @Column(unique = true)
     private String uName;
     private String password;
-    @Column(columnDefinition = "varchar")
-    private String cDate;
+    private Date cDate;
 
     public Users() {
     }
 
-    public Users(long id, String uName, String password, String cDate) {
+    public Users(long id, String uName, String password, Date cDate) {
         this.id = id;
         this.uName = uName;
         this.password = password;

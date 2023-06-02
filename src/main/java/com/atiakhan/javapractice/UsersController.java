@@ -1,5 +1,6 @@
 package com.atiakhan.javapractice;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,8 @@ public class UsersController {
   }
 
   @GetMapping("/list")
-  public List<Users> getUsers() {
-    return (List<Users>) this.user.findAll();
+  public Collection<Users> getUsers() {
+    return  this.user.findAll();
   }
 
   @PostMapping("")
